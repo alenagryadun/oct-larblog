@@ -23,4 +23,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    // Другие Eloquent свойства...
+
+  /**
+   * Получить все задачи пользователя.
+   */
+  public function artickles()
+  {
+    return $this->hasMany(Artickle::class);
+  }
 }

@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\ArtickleController;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+
+Route::get('/artickles', 'ArtickleController@index');
+
+Route::post('/photos','ArtickleController@store')->name('artickles_strore');
